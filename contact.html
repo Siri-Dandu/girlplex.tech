@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Contact Form</title>
+    <link href="style_contact.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@400;800&family=PT+Sans&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+<script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+<script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+  </head>
+
+<body>
+  <div class="header" id="myHeader">
+    <div id="announce">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe74WR-p185uEyMMXjr1kZufH7rs8kviLh_QWsgUiHFa01JkQ/viewform"><p class="announcements">Our director position applications are open! Sign up now!</p></a>
+    <button id="ann_dlt">X</button>
+    </div>
+<div class="topnav" id="myTopnav">
+  <img style="height:75px;"src="images/logo1.png"></img>
+  <a href="index.html" class="active">Home</a>
+  <a href="contact.html">Contact</a>
+   <div class="dropdown">
+  <button class="dropbtn">Programs</button>
+  <div class="dropdown-content">
+    <a href="ms.html">Middle School</a>
+    <a href="es.html">Elementary School</a>
+    <a href="wkshop.html">Workshops</a>
+  </div>
+</div>
+
+  <a href="about.html">About</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <img style="height: 35px;" src="images/lines.png"></img>
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<div style="padding-left:16px">
+</div>
+</div>
+
+
+  <div style="display:flex; flex-direction: column; align-items: center;">
+
+  <h1> Contact Us Here:</h1>
+  <p> Fill in your name, email, and meessage so we can get back to you as soon as possible </p>
+ <form name = "ContactInfo">
+  <input style="font-family: Karla;"name="name" type="fname" placeholder="Name" required>
+  <br>
+  <input style="font-family: Karla;"name="email" type="email" placeholder="Email" required>
+  <br>
+  <input style="font-family: Karla;"name="message" type="text-area" placeholder="Write Message Here" required>
+  <br>
+  <button id="form-btn" style="font-family: Karla;" type="submit">Submit</button>
+</form> 
+</div>
+
+<div class="footer">
+  <div id="thanks">
+  <p>WITH THANKS TO:</p>
+  <img style="height: 50px;" src="images/DTLibrary-logo-FINAL-RGB.jpg" />
+  </div>
+<div id="links_news"> 
+<div id="links">
+  <p style="color: #ff8c66; font-size: 20px;">LINKS</p>
+  <a href="ms.html"><p style="border-bottom: 1px solid #ff8c66;">Middle School Camp</p></a>
+<p style="border-bottom: 1px solid #ff8c66;"><a href="es.html">Elementary School Camp</a></p>
+</div>
+<div id="footer_news">
+  <p style="color: #ff8c66; font-size: 20px; margin-bottom: 0px; text-align: center;">SUBSCRIBE TO OUR NEWSLETTER</p>
+  <form style="margin-top: 0px;" name="submit-to-google-sheet">
+  <input id="form-text"style="font-family: Karla;"name="email" type="email" placeholder="Email" required>
+  <button id="form-btn" style="font-family: Karla;" type="submit">Subscribe</button>
+</form>
+</div>
+</div>
+  <p style="text-align: center; text-decoration: underline; margin-top: 40px;"><a href="mailto:girlplexco@gmail.com" style="color: #ff8c66;">girlplexco@gmail.com</a></p>
+</div>
+
+<script>
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyTTncE1acQ63XbItIeln-sDh5MD6MyEZt8CMTo9Wzb5hE2L64/exec'
+  const form = document.forms['ContactInfo']
+
+     form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => location.reload())
+      .catch(error => console.error('Error!', error.message))
+  })
+
+
+  
+
+
+
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

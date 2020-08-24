@@ -1,0 +1,363 @@
+body {
+  margin: 0;
+  font-family: 'Karla', sans-serif;
+}
+
+blockquote {
+  font-size: 20px; 
+}
+
+span {
+   color:#ff8c66; 
+   //font-size: 60px;
+}
+
+.main{
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color:#ff8c66;
+}
+
+#announce{
+  display: flex;
+  background-color: #FFFFCC;
+  justify-content: center;
+}
+
+#ann_dlt {
+  background-color: #FFFFCC;
+  border: none;
+  margin-left: 5px;
+}
+
+.announcements {
+  background-color: #FFFFCC;
+  margin: 0px;
+  font-size: 20px;
+  text-align: center;
+  height: 35px;
+  padding-top: 10px;
+}
+
+@media screen and (max-width: 600px) {
+.announcements {
+  font-size: 13px;
+  font-weight: bold;
+  height: 25px;
+  padding-top: 10px;
+}
+}
+
+
+.topnav {
+  overflow: visible;
+  background-color: #e6ffff;
+}
+
+.topnav a {
+  float: right;
+  display: block;
+  color: #ff8c66;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.topnav a:hover {
+  background-color: #ff8c66;
+  color: white;
+  height: 50px;
+}
+
+.topnav a.active {
+  background-color: #ff8c66;
+  color: white;
+  height: 50px;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  
+  .topnav a.active{
+   display: none;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+    background-color: white;
+    color: #ff8c66;
+    border-top: 0.1px solid #ebebeb;
+  }
+  .topnav.responsive a.active {
+    height: 30px;
+  }
+  .topnav a:hover {
+  background-color: #e6ffff;
+  color: white;
+  height: 50px;
+}
+}
+
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+@media screen and (max-width: 600px) {
+.parallax {
+			/* The image used */
+			background-image: url("main.jpeg");
+
+			/* Set a specific height */
+			height: 350px;
+
+			/* Create the parallax scrolling effect */
+			background-attachment: fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+}
+
+#es_headertxt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 300px 30px 300px;
+}
+
+#counter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+  font-size: 35px;
+  color: #ff8c66;
+  background-color: #ff8c6654;
+  padding: 40px;
+}
+.count {
+  margin-top: 30px;
+}
+
+#projects{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+}
+
+#languages {
+  margin-top: 50px;
+  padding: 20px 50px 30px 50px;
+  background-color: #FFFFCC;
+}
+
+#interested {
+  padding-top: 20px; 
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  background-color: #ff8c6654;
+}
+
+.learnbtn {
+  transition: transform .2s; /* Animation */
+  margin: 0 auto;
+}
+
+.learnbtn:hover {
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+#project_names{
+  display: flex;
+  justify-content: space-around;
+}
+
+		.faq {
+			display: flex;
+			flex-direction: column;
+      align-items: center;
+      padding: 50px 150px 50px 150px;
+      font-family: 'Karla', sans-serif;
+      color: #ff8c66;
+		}
+
+		.accordion {
+			background-color: #FFFFCC;
+			color: #444;
+			cursor: pointer;
+			padding: 18px;
+			width: 100%;
+			text-align: left;
+			border: none;
+			outline: none;
+			transition: 0.4s;
+			font-size: 20px;
+			font-family: 'Karla', sans-serif;
+		}
+
+		/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+		.active,
+		.accordion:hover {
+			background-color: #e6ffff;
+		}
+
+		/* Style the accordion panel. Note: hidden by default */
+		.panel {
+			padding: 0 18px;
+			background-color: white;
+			display: none;
+			overflow: hidden;
+			font-family: 'Karla', sans-serif;
+			font-size: 20px;
+      color: black;
+		}
+
+@media screen and (max-width: 600px) {
+    #es_headertxt{
+      margin: 50px;
+    }
+    #interested{
+      padding: 10px;
+    }
+    .faq{
+      padding: 20px;
+    }
+}
+
+.dropbtn {
+  background-color: #e6ffff;
+  color: #ff8c66;
+  padding: 16px;
+  font-size: 22px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  float: right;
+  display: block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 90px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #ff8c66;
+  padding: 12px 16px;
+  text-decoration: none;
+  /*display: block;*/
+  display: flex;
+  flex-direction: column;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: #ff8c66;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: flex;
+  flex-direction: column;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn{
+  background-color: #ff8c66;
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+   .dropdown{
+     display:none;
+   }
+ }
+
+ .footer {
+   margin-top: 50px;
+   background-color: #e6ffff;
+   margin-bottom: 0px;
+   padding: 10px;
+ }
+
+ #thanks{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+
+ #links_news {
+   display: flex;
+   justify-content: space-around;
+   margin-top: 30px;
+ }
+
+ #footer_news {
+   border: 1px #ff8c66 solid;
+   padding: 7px;
+ }
+
+ #form{
+  font-family: Karla;
+}
+
+#form-text {
+  font-size: 20px;
+  height: 35px;
+  width: 450px;
+  border: none;
+}
+
+#form-btn {
+  margin-top: 50px;
+  height: 35px;
+  font-size: 20px;
+  background-color: #ff8c66;
+  border: none;
+}
