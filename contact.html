@@ -48,15 +48,25 @@
 
   <h1> Contact Us Here:</h1>
   <p> Fill in your name, email, and meessage so we can get back to you as soon as possible </p>
- <form name = "ContactInfo">
-  <input style="font-family: Karla;"name="name" type="fname" placeholder="Name" required>
-  <br>
-  <input style="font-family: Karla;"name="email" type="email" placeholder="Email" required>
-  <br>
-  <input style="font-family: Karla;"name="message" type="text-area" placeholder="Write Message Here" required>
-  <br>
-  <button id="form-btn" style="font-family: Karla;" type="submit">Submit</button>
-</form> 
+  <form id="test-form">
+
+   <div>
+     <label>Email</label>
+     <input type="text" name="email" placeholder="Field 1"/>
+   </div>
+
+   <div>
+     <label>Message</label>
+     <input type="text" name="message" placeholder="Field 2"/>
+   </div>
+
+
+
+   <div>
+     <button type="submit"id="submit-form">Submit</button>
+   </div>
+
+ </form>
 </div>
 
 <div class="footer">
@@ -64,7 +74,7 @@
   <p>WITH THANKS TO:</p>
   <img style="height: 50px;" src="images/DTLibrary-logo-FINAL-RGB.jpg" />
   </div>
-<div id="links_news"> 
+<div id="links_news">
 <div id="links">
   <p style="color: #ff8c66; font-size: 20px;">LINKS</p>
   <a href="ms.html"><p style="border-bottom: 1px solid #ff8c66;">Middle School Camp</p></a>
@@ -82,22 +92,21 @@
 </div>
 
 <script>
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyTTncE1acQ63XbItIeln-sDh5MD6MyEZt8CMTo9Wzb5hE2L64/exec'
-  const form = document.forms['ContactInfo']
+  var $form = $('form#test-form'),
+    url = 'https://script.google.com/macros/s/AKfycbz3zS_XGbcw9LrbNdQNOiTLooNttykt0ttX7wxYE9Xi_eX-4m4w/exec'
 
-     form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => location.reload())
-      .catch(error => console.error('Error!', error.message))
-  })
-
-
-  
-
-
-
-    </script>
+$('#submit-form').on('click', function(e) {
+  e.preventDefault();
+  var jqxhr = $.ajax({
+    url: url,
+    method: "GET",
+    dataType: "json",
+    data: $form.serializeObject()
+  }).success(
+    print("hello")
+  );
+})
+  </script>
     <script src="script.js"></script>
 </body>
 </html>
